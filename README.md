@@ -32,4 +32,5 @@ Again, all whitespace is ignored.
 
 # License
 
-This project is licensed under the MIT License.
+The main project is licensed under the MIT License.  
+However, all contents of the `examples/` folder are released into the public domain under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) dedication.
