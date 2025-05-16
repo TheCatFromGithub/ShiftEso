@@ -1,10 +1,11 @@
 # ShiftEso
 
-ShiftEso is a new esoteric programming language (esolang) created by TheCatFromGithub in 2025. The following is a guide on how to use it.
+**ShiftEso** is a new esoteric programming language (esolang) created by TheCatFromGithub in 2025. The following is a guide on how to use it.
 
 # Requirements
 
-You'll need Python 3.10+, and NumPy. (`pip install numpy`)
+- Python 3.10+
+- NumPy
 
 # Running a program
 
@@ -24,7 +25,7 @@ If ShiftEso doesn't find it, it will assume a size of 16x16. There are two basic
 `>`, `<`, `^`, and `v` all take two parameters.
 `>x,y` shifts row x one step  to the right and inserts y at the end. The value that "fell out" is stored in `$`. x and y can be an int, `$`, or `%`. Note that the value to insert is computed AFTER the shift has been done, so you can `>0,$` to rotate row 0 to the right.
 `<x,y` is like `>x,y` but it shifts row x to the left instead of the right.
-`^x,y` is like `>x,y` but shifts COLUMN x up.
+`^x,y` is like `>x,y` but shifts **column** x up.
 `vx,y` is like `^x,y` but shifts column x down.
 
 Again, all whitespace is ignored.
