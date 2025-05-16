@@ -13,11 +13,11 @@ Simply edit your main.py file, set `stored_in` to whatever Unicode sequence you 
 
 # Examples
 
-You can find ShiftEso examples in the examples/ folder.
+You can find ShiftEso examples in the `examples/` folder.
 
 # How to write a program
 
-You can find instructions on how to write a program in examples/how_to_write_a_program.txt.
+You can find instructions on how to write a program in `examples/how_to_write_a_program.md`.
 
 # License
 
