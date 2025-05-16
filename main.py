@@ -5,7 +5,7 @@ fallout = 0  # $
 stored = 0   # %
 grid = None
 input_p = 0
-stored_in = "Lal"
+stored_in = "" # Change this
 pc = 0
 code_list = []
 callstack = []
@@ -164,4 +164,4 @@ def interpret(code):
         interpret_command(code_list[pc])
         pc += 1
 
-interpret("+[.+!]")
+interpret("+[.+!]") # and this
