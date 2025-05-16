@@ -1,6 +1,5 @@
 import numpy as np
 import re
-import sys
 
 fallout = 0  # $
 stored = 0   # %
