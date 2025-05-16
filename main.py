@@ -11,11 +11,6 @@ pc = 0
 code_list = []
 callstack = []
 
-def wraparound(number):
-    if number >= 0:
-        return number % 256
-    return 256 - (abs(number) % 256)
-
 def resolve(arg):
     global fallout, stored
     if arg == "$":
