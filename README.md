@@ -9,7 +9,7 @@
 
 # Running a program
 
-Simply edit your main.py file, set `stored_in` to whatever Unicode sequence you want the interpreter to read in, and at the bottom, change `interpret("+[.+!]")` to whatever ShiftEso program you want. 
+Simply edit your main.py file, set `stored_in` to whatever Unicode sequence you want the interpreter to read in, and change `program` to whatever program you want to execute(e.g. `;[.;]`)
 
 # Examples
 
