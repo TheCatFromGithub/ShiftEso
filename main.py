@@ -1,5 +1,6 @@
 import numpy as np
 import re
+import sys
 
 fallout = 0  # $
 stored = 0   # %
@@ -90,7 +91,7 @@ def interpret_command(command):
         case "@":
             fallout = stored
         case ".":
-            print(chr(int(fallout) % 256), end="")
+            print(chr(int(fallout) % 256), end="", flush=True)
         case ";":
             if input_p < len(stored_in):
                 fallout = ord(stored_in[input_p])
@@ -104,7 +105,7 @@ def interpret_command(command):
             if fallout != 0:
                 callstack.append(pc)
                 return
-            level = 0
+            level = 1
 
             while True:
                 pc += 1
@@ -112,6 +113,7 @@ def interpret_command(command):
                 if pc == len(code_list):
                     print("Mismatched loop: no ] for [")
                     quit(1)
+                                
                 match code_list[pc]:
                     case "[":
                         level += 1
