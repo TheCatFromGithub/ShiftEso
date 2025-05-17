@@ -14,9 +14,9 @@ callstack = []
 def resolve(arg):
     global fallout, stored
     if arg == "$":
-        return fallout
+        return int(fallout)
     elif arg == "%":
-        return stored
+        return int(stored)
     else:
         return int(arg)
 
