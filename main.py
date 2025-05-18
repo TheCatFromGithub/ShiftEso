@@ -25,10 +25,7 @@ def shift_up(matrix, col_index, insert=0):
     fallen = matrix[0, col_index]
     matrix[:-1, col_index] = matrix[1:, col_index]
     fallout = fallen
-    if insert == "$":
-        insert = fallout
-    elif insert == "%":
-        insert = stored
+    insert = resolve(insert)
     matrix[-1, col_index] = insert
     return matrix
 
@@ -37,10 +34,7 @@ def shift_down(matrix, col_index, insert=0):
     fallen = matrix[-1, col_index]
     matrix[1:, col_index] = matrix[:-1, col_index]
     fallout = fallen
-    if insert == "$":
-        insert = fallout
-    elif insert == "%":
-        insert = stored
+    insert = resolve(insert)
     matrix[0, col_index] = insert
     return matrix
 
@@ -49,10 +43,7 @@ def shift_left(matrix, row_index, insert=0):
     fallen = matrix[row_index, 0]
     matrix[row_index, :-1] = matrix[row_index, 1:]
     fallout = fallen
-    if insert == "$":
-        insert = fallout
-    elif insert == "%":
-        insert = stored
+    insert = resolve(insert)
     matrix[row_index, -1] = insert
     return matrix
 
@@ -61,10 +52,7 @@ def shift_right(matrix, row_index, insert=0):
     fallen = matrix[row_index, -1]
     matrix[row_index, 1:] = matrix[row_index, :-1]
     fallout = fallen
-    if insert == "$":
-        insert = fallout
-    elif insert == "%":
-        insert = stored
+    insert = resolve(insert)
     matrix[row_index, 0] = insert
     return matrix
 
