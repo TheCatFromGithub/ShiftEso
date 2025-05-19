@@ -28,6 +28,9 @@ def resolve(arg):
     elif arg == "%":
         return int(stored)
     else:
+        if arg.startswith("~"):
+            arg = arg[1:]
+            arg = 0 - int(arg)
         return int(arg)
 
 def shift_up(matrix, col_index, insert=0):
@@ -154,11 +157,12 @@ def interpret(code):
 
     callstack = []
     pc = 0
-    command_pattern = r'[><\^v](?:\d+|\$|%),(?:\d+|\$|%)|[+\-#@.;\[\]!]'
+    command_pattern = r'[><\^v](?:~?\d+|\$|%),(?:\d+|\$|%)|[+\-#@.;\[\]!]'
     width, height = extract_width_and_height(code)
     grid = np.zeros((height, width))
     code = re.sub(r'\s', '', code).lower()
     code_list = re.findall(command_pattern, code)
+    print(code_list)
     while pc < len(code_list):
         interpret_command(code_list[pc])
         pc += 1
