@@ -12,4 +12,4 @@ If ShiftEso doesn't find it, it will assume a size of 16x16. There are two basic
 `vx,y` is like `^x,y` but shifts column x down.
 
 Again, all whitespace is ignored.
-Also, all the indicies are mod the max, so if you can put in an index of -1 to get the last row/col, -2 to get the penultimate row/col.
+Also, all the indicies are mod the max, so if you can put in an index of ~1 to get the last row/col, ~2 to get the penultimate row/col. The reason ~ is used instead of - is because - is reserved for decrementing.
