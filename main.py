@@ -10,6 +10,16 @@ program = ";[.;]" # and this
 pc = 0
 code_list = []
 callstack = []
+width = 0
+height = 0
+
+def resolve_row(row):
+    global height
+    return row % height
+
+def resolve_col(col):
+    global width
+    return col % width
 
 def resolve(arg):
     global fallout, stored
@@ -22,6 +32,7 @@ def resolve(arg):
 
 def shift_up(matrix, col_index, insert=0):
     global fallout
+    col_index = resolve_col(col_index)
     fallen = matrix[0, col_index]
     matrix[:-1, col_index] = matrix[1:, col_index]
     fallout = fallen
@@ -31,6 +42,7 @@ def shift_up(matrix, col_index, insert=0):
 
 def shift_down(matrix, col_index, insert=0):
     global fallout
+    col_index = resolve_col(col_index)
     fallen = matrix[-1, col_index]
     matrix[1:, col_index] = matrix[:-1, col_index]
     fallout = fallen
@@ -40,6 +52,7 @@ def shift_down(matrix, col_index, insert=0):
 
 def shift_left(matrix, row_index, insert=0):
     global fallout
+    row_index = resolve_row(row_index)
     fallen = matrix[row_index, 0]
     matrix[row_index, :-1] = matrix[row_index, 1:]
     fallout = fallen
@@ -49,6 +62,7 @@ def shift_left(matrix, row_index, insert=0):
 
 def shift_right(matrix, row_index, insert=0):
     global fallout
+    row_index = resolve_row(row_index)
     fallen = matrix[row_index, -1]
     matrix[row_index, 1:] = matrix[row_index, :-1]
     fallout = fallen
@@ -136,7 +150,7 @@ def interpret_command(command):
             shift_down(grid, resolve(first), last)
 
 def interpret(code):
-    global grid, pc, code_list, callstack
+    global grid, pc, code_list, callstack, width, height
 
     callstack = []
     pc = 0
